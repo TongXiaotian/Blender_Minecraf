@@ -1,0 +1,51 @@
+{
+  "steps": [
+    "插件已注册",
+    "退出前：模式=playing 区块=74 对象=45",
+    "已调用退出",
+    "退出后：{\"objects\": 3, \"collections\": [\"Collection\"], \"mc_images\": [\"MC_Atlas\"], \"mc_materials\": [\"MC_Solid\", \"MC_Translucent\"], \"mc_meshes\": 0}",
+    "视图恢复情况：{\"perspective\": \"PERSP\", \"shading\": \"SOLID\", \"overlays\": true, \"camera\": \"Camera\"}",
+    "截图 E:\\360MoveData\\Users\\ASUS\\Desktop\\deepseek\\shot_after_exit.png",
+    "Blender 仍然存活 ✅ 测试通过"
+  ],
+  "info": {
+    "before": {
+      "mode": "playing",
+      "chunks": 74,
+      "objects": 45,
+      "collections": [
+        "Collection",
+        "MC_Game",
+        "MC_World"
+      ]
+    },
+    "view_before_exit": {
+      "perspective": "CAMERA",
+      "shading": "MATERIAL",
+      "overlays": false,
+      "camera": "MC_Camera"
+    },
+    "after": {
+      "objects": 3,
+      "collections": [
+        "Collection"
+      ],
+      "mc_images": [
+        "MC_Atlas"
+      ],
+      "mc_materials": [
+        "MC_Solid",
+        "MC_Translucent"
+      ],
+      "mc_meshes": 0
+    },
+    "view_after_exit": {
+      "perspective": "PERSP",
+      "shading": "SOLID",
+      "overlays": true,
+      "camera": "Camera"
+    }
+  },
+  "draw_errors": [],
+  "tick_errors": []
+}

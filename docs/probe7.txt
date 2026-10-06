@@ -1,0 +1,69 @@
+﻿[PROBE] === SpaceView3D RNA ===
+[PROBE] shading prop: True
+[PROBE] region_3d prop: True
+[PROBE] draw_handler_add fn: False
+[PROBE] draw_handler_remove fn: False
+[PROBE] shading fixed_type: View3DShading
+[PROBE] View3DShading identifiers: ['aov_name', 'background_color', 'background_type', 'cavity_ridge_factor', 'cavity_type', 'cavity_valley_factor', 'color_type', 'curvature_ridge_factor', 'curvature_valley_factor', 'cycles', 'light', 'object_outline_color', 'render_pass', 'rna_type', 'selected_studio_light', 'shadow_intensity', 'show_backface_culling', 'show_cavity', 'show_object_outline', 'show_shadows', 'show_specular_highlight', 'show_xray', 'show_xray_wireframe', 'single_color', 'studio_light', 'studiolight_background_alpha', 'studiolight_background_blur', 'studiolight_intensity', 'studiolight_rotate_z', 'type', 'use_compositor', 'use_dof', 'use_scene_lights', 'use_scene_lights_render', 'use_scene_world', 'use_scene_world_render', 'use_studiolight_view_rotation', 'use_world_space_lighting', 'wireframe_color_type', 'xray_alpha', 'xray_alpha_wireframe']
+[PROBE] === Window / WindowManager ===
+[PROBE] Window.cursor_warp fn: True
+[PROBE] WindowManager.event_timer_add fn: True
+[PROBE] WindowManager.event_timer_remove fn: True
+[PROBE] DOC event_timer_add : Add a timer to the given window, to generate periodic 'TIMER' events | params: ['time_step', 'window', 'result']
+[PROBE] DOC event_timer_remove : event_timer_remove | params: ['timer']
+[PROBE] DOC cursor_warp: Set the cursor position | params: ['x', 'y']
+[PROBE] === Mesh ===
+[PROBE] Mesh.color_attributes prop: True
+[PROBE] Mesh.uv_layers prop: True
+[PROBE] Mesh.vertex_normals prop: True
+[PROBE] Mesh.corner_normals prop: True
+[PROBE] Mesh.edges prop: True
+[PROBE] Mesh.polygons prop: True
+[PROBE] Mesh.loops prop: True
+[PROBE] Mesh.vertices prop: True
+[PROBE] Mesh.from_pydata fn: False
+[PROBE] Mesh.calc_loop_triangles fn: True
+[PROBE] Mesh.calc_normals_split fn: False
+[PROBE] Mesh.calc_tangents fn: True
+[PROBE] Mesh.shade_flat fn: False
+[PROBE] Mesh.shade_smooth fn: False
+[PROBE] Mesh.validate fn: True
+[PROBE] Mesh.update fn: True
+[PROBE] Mesh.normals_split_custom_set fn: True
+[PROBE] color_attributes fixed_type: Attribute
+[PROBE] color attr collection fns: []
+[PROBE] color_attribute item props: None
+[PROBE] MeshColorAttribute err AttributeError("'module' object has no attribute 'MeshColorAttribute'")
+[PROBE] MeshColorAttributes err AttributeError("'module' object has no attribute 'MeshColorAttributes'")
+[PROBE] from_pydata err 'bpy_prop_collection[key]: key "from_pydata" not found'
+[PROBE] no MeshColorAttribute type
+[PROBE] Attribute data_type enum (generic): ['FLOAT', 'INT', 'BOOLEAN', 'FLOAT_VECTOR', 'FLOAT_COLOR', 'QUATERNION', 'FLOAT4X4', 'STRING', 'INT8', 'INT16_2D', 'INT32_2D', 'FLOAT2', 'FLOAT4', 'BYTE_COLOR']
+[PROBE] Attribute domain enum: ['POINT', 'EDGE', 'FACE', 'CORNER', 'CURVE', 'INSTANCE', 'LAYER']
+[PROBE] MeshAttributes.new exists: n/a
+[PROBE] === Image ===
+[PROBE] Image.scale fn: True
+[PROBE] Image.save_render fn: True
+[PROBE] Image.pack fn: True
+[PROBE] Image.unpack fn: True
+[PROBE] Image.gl_load fn: True
+[PROBE] Image.gl_free fn: True
+[PROBE] Image.interpolation prop: False
+[PROBE] Image colorspace_settings: True
+[PROBE] === bpy.app / misc ===
+[PROBE] bpy.app.timers.register: True
+[PROBE] bpy.app.version: (5, 2, 2)
+[PROBE] bpy.app.version_string: 5.2.2 LTS
+[PROBE] bpy.app.build_options has 'gpu_': []
+[PROBE] === gpu extras ===
+[PROBE] gpu.state.viewport_get(): (0, 0, 0, 0)
+[PROBE] gpu.platform.backend_type_get(): OPENGL
+[PROBE] gpu.platform.renderer_get(): Intel(R) Iris(R) Xe Graphics
+[PROBE] gpu.platform.version_get(): 4.6.0 - Build 27.20.100.9268
+[PROBE] from_builtin(..., config='DEFAULT') OK
+[PROBE] config DEFAULT OK
+[PROBE] config BATCHED -> expected a string in ('DEFAULT', 'CLIPPED'), got 'BATCHED'
+[PROBE] config INSTANCED -> expected a string in ('DEFAULT', 'CLIPPED'), got 'INSTANCED'
+[PROBE] config NONE -> expected a string in ('DEFAULT', 'CLIPPED'), got 'NONE'
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

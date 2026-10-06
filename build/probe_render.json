@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "phase": "taa=1 阴影ON 默认GI",
+      "ticks_per_sec": 0.3,
+      "frame_ms": 3295.4
+    },
+    {
+      "phase": "taa=1 阴影OFF 默认GI",
+      "ticks_per_sec": 0.9,
+      "frame_ms": 1161.5
+    },
+    {
+      "phase": "taa=1 阴影ON 关raytracing+fastgi",
+      "ticks_per_sec": 0.2,
+      "frame_ms": 4478.3
+    },
+    {
+      "phase": "taa=4 阴影ON 默认GI",
+      "ticks_per_sec": 0.2,
+      "frame_ms": 5542.1
+    },
+    {
+      "phase": "taa=2 阴影ON 关fastgi",
+      "ticks_per_sec": 46.6,
+      "frame_ms": 21.4
+    }
+  ]
+}

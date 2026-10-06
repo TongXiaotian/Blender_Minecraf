@@ -1,0 +1,196 @@
+﻿[PROBE] ############ BLF ############
+[PROBE] blf dir: ['CLIPPING', 'MONOCHROME', 'NO_FALLBACK', 'ROTATION', 'SHADOW', 'WORD_WRAP', 'aspect', 'bind_imbuf', 'clipping', 'color', 'dimensions', 'disable', 'draw', 'draw_buffer', 'enable', 'load', 'position', 'rotation', 'shadow', 'shadow_offset', 'size', 'types', 'unload', 'word_wrap']
+[PROBE] --- DOC blf.size ---
+[PROBE] .. function:: size(fontid, size)
+
+   Set the size for drawing text.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param size: Point size of the font.
+   :type size: float
+
+[PROBE] --- DOC blf.color ---
+[PROBE] .. function:: color(fontid, r, g, b, a)
+
+   Set the color for drawing text.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param r: Red channel 0.0 - 1.0.
+   :type r: float
+   :param g: Green channel 0.0 - 1.0.
+   :type g: float
+   :param b: Blue channel 0.0 - 1.0.
+   :type b: float
+   :param a: Alpha channel 0.0 - 1.0.
+   :type a: float
+
+[PROBE] --- DOC blf.position ---
+[PROBE] .. function:: position(fontid, x, y, z)
+
+   Set the position for drawing text.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param x: X axis position to draw the text.
+   :type x: float
+   :param y: Y axis position to draw the text.
+   :type y: float
+   :param z: Z axis position to draw the text (typically 0).
+   :type z: float
+
+[PROBE] --- DOC blf.draw ---
+[PROBE] .. function:: draw(fontid, text)
+
+   Draw text in the current context.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param text: The text to draw.
+   :type text: str
+
+[PROBE] --- DOC blf.shadow ---
+[PROBE] .. function:: shadow(fontid, level, r, g, b, a)
+
+   Shadow options, enable/disable using :data:`SHADOW`.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param level: The shadow type: 0 for none, 3 for 3x3 blur, 5 for 5x5 blur or 6 for outline. Other values raise a :exc:`TypeError`.
+   :type level: int
+   :param r: Shadow color (red channel 0.0 - 1.0).
+   :type r: float
+   :param g: Shadow color (green channel 0.0 - 1.0).
+   :type g: float
+   :param b: Shadow color (blue channel 0.0 - 1.0).
+   :type b: float
+   :param a: Shadow color (alpha channel 0.0 - 1.0).
+   :type a: float
+
+[PROBE] --- DOC blf.enable ---
+[PROBE] .. function:: enable(fontid, option)
+
+   Enable a font drawing option.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param option: One of :data:`ROTATION`, :data:`CLIPPING`, :data:`SHADOW`, :data:`MONOCHROME` or :data:`WORD_WRAP`.
+   :type option: int
+
+[PROBE] --- DOC blf.disable ---
+[PROBE] .. function:: disable(fontid, option)
+
+   Disable a font drawing option.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param option: One of :data:`ROTATION`, :data:`CLIPPING`, :data:`SHADOW`, :data:`MONOCHROME` or :data:`WORD_WRAP`.
+   :type option: int
+
+[PROBE] --- DOC blf.dimensions ---
+[PROBE] .. function:: dimensions(fontid, text)
+
+   Return the width and height of the text.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param text: The text to measure.
+   :type text: str
+   :return: The width and height of the text.
+   :rtype: tuple[float, float]
+
+[PROBE] --- DOC blf.aspect ---
+[PROBE] .. function:: aspect(fontid, aspect)
+
+   Set the aspect for drawing text.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param aspect: The aspect ratio for non-uniform scaling of text.
+   :type aspect: float
+
+[PROBE] --- DOC blf.rotation ---
+[PROBE] .. function:: rotation(fontid, angle)
+
+   Set the text rotation angle, enable/disable using :data:`ROTATION`.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param angle: The angle for text drawing to use (in radians).
+   :type angle: float
+
+[PROBE] --- DOC blf.shadow_offset ---
+[PROBE] .. function:: shadow_offset(fontid, x, y)
+
+   Set the offset for shadow text, enable/disable using :data:`SHADOW`.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param x: Horizontal shadow offset value in pixels.
+   :type x: int
+   :param y: Vertical shadow offset value in pixels.
+   :type y: int
+
+[PROBE] --- DOC blf.word_wrap ---
+[PROBE] .. function:: word_wrap(fontid, wrap_width)
+
+   Set the wrap width, enable/disable using :data:`WORD_WRAP`.
+
+   :param fontid: The id of the typeface as returned by :func:`blf.load`, for default font use 0.
+   :type fontid: int
+   :param wrap_width: The width (in pixels) to wrap words at.
+   :type wrap_width: int
+
+[PROBE] ############ draw_handler_add ############
+[PROBE] --- DOC SpaceView3D.draw_handler_add ---
+[PROBE] .. classmethod:: draw_handler_add(callback, args, region_type, draw_type)
+
+   Add a new draw handler to this space type.
+   It will be called every time the specified region in the space type will be drawn.
+   Note: All arguments are positional only for now.
+
+   :param callback:
+      A function that will be called when the region is drawn.
+      It gets the specified arguments as input, it's return value is ignored.
+   :type callback: Callable[..., Any]
+   :param args: Arguments that will be passed to the callback.
+   :type args: tuple[Any, ...]
+   :param region_type: The region type the callback draws in; usually ``WINDOW``. (:class:`bpy.types.Region.type`)
+   :type region_type: str
+   :param draw_type: Usually ``POST_PIXEL`` for 2D drawing and ``POST_VIEW`` for 3D drawing. In some cases ``PRE_VIEW`` can be used. ``BACKDROP`` can be used for backdrops in the node editor.
+   :type draw_type: str
+   :return: Handler that can be removed later on.
+   :rtype: object
+
+[PROBE] --- DOC SpaceView3D.draw_handler_remove ---
+[PROBE] .. classmethod:: draw_handler_remove(handler, region_type)
+
+   Remove a draw handler that was added previously.
+
+   :param handler: The draw handler that should be removed.
+   :type handler: object
+   :param region_type: Region type the callback was added to.
+   :type region_type: str
+
+[PROBE] SpaceView3D draw handler types: ['draw_handler_add', 'draw_handler_remove']
+[PROBE] Spaces with draw_handler_add: ['Space', 'SpaceClipEditor', 'SpaceConsole', 'SpaceDopeSheetEditor', 'SpaceFileBrowser', 'SpaceGraphEditor', 'SpaceImageEditor', 'SpaceInfo', 'SpaceNLA', 'SpaceNodeEditor', 'SpaceOutliner', 'SpacePreferences', 'SpaceProperties', 'SpaceSequenceEditor', 'SpaceSpreadsheet', 'SpaceTextEditor', 'SpaceView3D']
+[PROBE] ############ gpu.state enums ############
+[PROBE] blend_set -> expected a string in ('NONE', 'ALPHA', 'ALPHA_PREMULT', 'ADDITIVE', 'ADDITIVE_PREMULT', 'MULTIPLY', 'SUBTRACT', 'INVERT'), got 'NOT_A_MODE'
+[PROBE] depth_test_set -> expected a string in ('NONE', 'ALWAYS', 'LESS', 'LESS_EQUAL', 'EQUAL', 'GREATER', 'GREATER_EQUAL'), got 'NOT_A_MODE'
+[PROBE] face_culling_set -> expected a string in ('NONE', 'FRONT', 'BACK'), got 'NOT_A_MODE'
+[PROBE] ############ mathutils ortho ############
+blender.exe : Traceback (most recent call last):
+所在位置 行:1 字符: 175
++ ... P\bl52cfg"; & "E:\Program Files\Blender Foundation\Blender 5.2\blende ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "E:\360MoveData\Users\ASUS\Desktop\deepseek\bl52_probe.py", line 53, in <module>
+    P("Matrix.Ortho doc:", (Matrix.Ortho.__doc__ or "")[:500])
+                            ^^^^^^^^^^^^
+AttributeError: type object 'Matrix' has no attribute 'Ortho'
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

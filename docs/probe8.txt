@@ -1,0 +1,79 @@
+﻿[PROBE] === Mesh attributes API ===
+[PROBE] type(mesh.color_attributes) = <class 'bpy_prop_collection'>
+[PROBE] color_attributes collection RNA = AttributeGroupMesh
+[PROBE] collection fns: ['new', 'remove', 'domain_size']
+[PROBE]    fn new : Add attribute to geometry
+[PROBE]        param name STRING default= Attribute enum= None
+[PROBE]        param type ENUM default= FLOAT enum= ['FLOAT', 'INT', 'BOOLEAN', 'FLOAT_VECTOR', 'FLOAT_COLOR', 'QUATERNION', 'FLOAT4X4', 'STRING', 'INT8', 'INT16_2D', 'INT32_2D', 'FLOAT2', 'FLOAT4', 'BYTE_COLOR']
+[PROBE]        param domain ENUM default= POINT enum= ['POINT', 'EDGE', 'FACE', 'CORNER', 'CURVE', 'INSTANCE', 'LAYER']
+[PROBE]        param attribute POINTER default= None enum= None
+[PROBE]    fn remove : Remove attribute from geometry
+[PROBE]        param attribute POINTER default= None enum= None
+[PROBE]    fn domain_size : Get the size of a given domain
+[PROBE]        param domain ENUM default= POINT enum= ['POINT', 'EDGE', 'FACE', 'CORNER', 'CURVE', 'INSTANCE', 'LAYER']
+[PROBE]        param size INT default= 0 enum= None
+[PROBE] Attribute item props: ['active', 'active_color', 'active_color_index', 'active_color_name', 'active_index', 'default_color_name', 'render_color_index', 'rna_type']
+[PROBE] type(mesh.attributes) = <class 'bpy_prop_collection'>
+[PROBE] mesh.attributes collection RNA = AttributeGroupMesh
+[PROBE]    attributes fn new : ['name', 'type', 'domain', 'attribute']
+[PROBE]    attributes fn remove : ['attribute']
+[PROBE]    attributes fn domain_size : ['domain', 'size']
+[PROBE] === from_pydata ===
+[PROBE] Mesh.from_pydata: <function Mesh.from_pydata at 0x00000223A8A962A0>
+[PROBE] doc: 
+Make a mesh from a list of vertices/edges/faces
+Until we have a nicer way to make geometry, use this.
+
+:param vertices:
+
+   float triplets each representing (X, Y, Z)
+   eg: [(0.0, 1.0, 0.5), ...].
+
+:type vertices: Iterable[Sequence[float]]
+:param edges:
+
+   int pairs, each pair contains two indices to the
+   *vertices* argument. eg: [(1, 2), ...]
+
+   When an empty iterable is passed in, the edges are inferred from the polygons.
+
+:type edges: Iterable[Sequence[int]]
+:param faces:
+
+   iterator of faces, each faces contains three or more indices to
+   the *vertices* argument. eg: [(5, 6, 8, 9),
+[PROBE] from_pydata OK verts= 4 polys= 1 loops= 4
+[PROBE] color_attributes.new(str type, domain) OK -> Col FLOAT_COLOR CORNER 4
+[PROBE] color attr foreach_set OK
+[PROBE] uv_layers.new OK -> UVMap
+[PROBE] Mesh.corner_normals attr: True
+[PROBE] mesh.vertex_normals: True
+[PROBE] mesh.corner_normals: True
+[PROBE] === Image nodetree interpolation ===
+blender.exe : E:\360MoveData\Users\ASUS\Desktop\deepseek\bl52_probe.py:58: DeprecationWarning: 'Material.use_nodes' is 
+expected to be removed in Blender 6.0
+所在位置 行:1 字符: 175
++ ... P\bl52cfg"; & "E:\Program Files\Blender Foundation\Blender 5.2\blende ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (E:\360MoveData\... in Blender 6.0:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  mat.use_nodes = True
+[PROBE] node types available: 35
+[PROBE] tex_node.interpolation set to: Closest
+[PROBE] tex_node.extension: CLIP
+[PROBE] node props: ['bl_description', 'bl_height_default', 'bl_height_max', 'bl_height_min', 'bl_icon', 'bl_idname', 'bl_label', 'bl_static_type', 'bl_width_default', 'bl_width_max', 'bl_width_min', 'color', 'color_mapping', 'color_tag', 'dimensions', 'extension', 'height', 'hide', 'image', 'image_user', 'inputs', 'internal_links', 'interpolation', 'label', 'location', 'location_absolute', 'mute', 'name', 'outputs', 'panel_states', 'parent', 'projection', 'projection_blend', 'rna_type', 'select', 'show_options', 'show_preview', 'show_texture', 'texture_mapping', 'type', 'use_custom_color', 'warning_propagation', 'width']
+[PROBE] has image prop: True
+[PROBE] has image_user: True
+[PROBE] image_user props: ['frame_current', 'frame_duration', 'frame_offset', 'frame_start', 'multilayer_layer', 'multilayer_pass', 'multilayer_view', 'rna_type', 'tile', 'use_auto_refresh', 'use_cyclic']
+[PROBE] === image does not save to disk ===
+[PROBE] source: GENERATED | filepath: '' | packed: None
+[PROBE] has file_format: True PNG
+Traceback (most recent call last):
+  File "E:\360MoveData\Users\ASUS\Desktop\deepseek\bl52_probe.py", line 75, in <module>
+    P("save_render doc:", (bpy.types.Image.save_render.__doc__ or "")[:300])
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Image' has no attribute 'save_render'
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

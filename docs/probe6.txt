@@ -1,0 +1,130 @@
+﻿[PROBE] ############ ImagePixels replacement ############
+[PROBE] bpy.types has ImagePixels: False
+[PROBE] type(pyimg.pixels) = <class 'bpy_prop_array'> | __class__ = <class 'bpy_prop_array'>
+[PROBE] pixels dir: ['foreach_get', 'foreach_set']
+[PROBE] RNA prop 'pixels' type: FLOAT | is_array: True
+[PROBE] --- DOC pixels.foreach_set ---
+[PROBE] .. method:: foreach_set(seq)
+
+   This is a function to give fast access to array data.
+
+   :param seq: Element values to write, must match the length of this array.
+   :type seq: Sequence[Any]
+
+[PROBE] --- DOC pixels.foreach_get ---
+[PROBE] .. method:: foreach_get(seq)
+
+   This is a function to give fast access to array data.
+
+   :param seq: Buffer to read element values into, must match the length of this array.
+   :type seq: MutableSequence[Any]
+
+[PROBE] pixels.__len__ = 64
+[PROBE] ############ numpy pixel writes ############
+[PROBE] foreach_set(np.ravel()) OK; is_dirty = True
+[PROBE] readback: [1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+[PROBE] foreach_get FAIL TypeError expected sequence size 64, got 16
+[PROBE] pixels[:] = list OK
+[PROBE] ############ texture + sampler (real) ############
+[PROBE] from_image OK w= 4 h= 4 fmt= SRGB8_A8
+[PROBE] uniform_sampler('image', real GPUTexture ) OK
+[PROBE] uniform_sampler('image', None ) -> TypeError GPUShader.uniform_sampler() argument 2 must be GPUTexture, not None
+[PROBE] IMAGE uniform_float('color') -> ValueError GPUShader.uniform_float: uniform color not found
+[PROBE]   IMAGE no uniform: color -> GPUShader.uniform_float: uniform color not found
+[PROBE]   IMAGE has uniform: image
+[PROBE]   IMAGE no uniform: texCoord -> GPUShader.uniform_float: uniform texCoord not found
+[PROBE]   IMAGE no uniform: alpha -> GPUShader.uniform_float: uniform alpha not found
+[PROBE]   IMAGE no uniform: opacity -> GPUShader.uniform_float: uniform opacity not found
+[PROBE] ############ builtin shader name validation ############
+[PROBE] OK    UNIFORM_COLOR (('pos', 'VEC3'),) | name = gpu_shader_3D_uniform_color
+[PROBE] OK    FLAT_COLOR (('pos', 'VEC3'), ('color', 'VEC4')) | name = gpu_shader_3D_flat_color
+[PROBE] OK    IMAGE (('pos', 'VEC3'), ('texCoord', 'VEC2')) | name = gpu_shader_3D_image
+[PROBE] OK    IMAGE_COLOR (('pos', 'VEC3'), ('texCoord', 'VEC2')) | name = gpu_shader_3D_image_color
+[PROBE] OK    SMOOTH_COLOR (('pos', 'VEC3'), ('color', 'VEC4')) | name = gpu_shader_3D_smooth_color
+[PROBE] OK    IMAGE_SCENE_LINEAR_TO_REC709_SRGB (('pos', 'VEC3'), ('texCoord', 'VEC2')) | name = gpu_shader_3D_image_scene_linear
+[PROBE] OK    IMAGE_COLOR_SCENE_LINEAR_TO_REC709_SRGB (('pos', 'VEC3'), ('texCoord', 'VEC2')) | name = gpu_shader_3D_image_color_scene_linear
+[PROBE] OK    POLYLINE_FLAT_COLOR (('pos', 'VEC3'), ('color', 'VEC4')) | name = gpu_shader_3D_polyline_flat_color
+[PROBE] OK    POLYLINE_SMOOTH_COLOR (('pos', 'VEC3'), ('color', 'VEC4')) | name = gpu_shader_3D_polyline_smooth_color
+[PROBE] OK    POLYLINE_UNIFORM_COLOR (('pos', 'VEC3'),) | name = gpu_shader_3D_polyline_uniform_color
+[PROBE] OK    POINT_FLAT_COLOR (('pos', 'VEC3'), ('color', 'VEC4')) | name = gpu_shader_3D_point_flat_color
+[PROBE] OK    POINT_UNIFORM_COLOR (('pos', 'VEC3'),) | name = gpu_shader_3D_point_uniform_color
+[PROBE] ############ View3DShading enums ############
+[PROBE] ALL props: ['aov_name', 'background_color', 'background_type', 'cavity_ridge_factor', 'cavity_type', 'cavity_valley_factor', 'color_type', 'curvature_ridge_factor', 'curvature_valley_factor', 'cycles', 'light', 'object_outline_color', 'render_pass', 'rna_type', 'selected_studio_light', 'shadow_intensity', 'show_backface_culling', 'show_cavity', 'show_object_outline', 'show_shadows', 'show_specular_highlight', 'show_xray', 'show_xray_wireframe', 'single_color', 'studio_light', 'studiolight_background_alpha', 'studiolight_background_blur', 'studiolight_intensity', 'studiolight_rotate_z', 'type', 'use_compositor', 'use_dof', 'use_scene_lights', 'use_scene_lights_render', 'use_scene_world', 'use_scene_world_render', 'use_studiolight_view_rotation', 'use_world_space_lighting', 'wireframe_color_type', 'xray_alpha', 'xray_alpha_wireframe']
+[PROBE] ENUM View3DShading.type = ['WIREFRAME', 'SOLID', 'MATERIAL', 'RENDERED'] default= SOLID
+[PROBE] ENUM View3DShading.color_type = ['MATERIAL', 'OBJECT', 'RANDOM', 'VERTEX', 'TEXTURE', 'SINGLE'] default= MATERIAL
+[PROBE] ENUM View3DShading.light = ['STUDIO', 'MATCAP', 'FLAT'] default= STUDIO
+[PROBE] ENUM View3DShading.background_type = ['THEME', 'WORLD', 'VIEWPORT'] default= THEME
+[PROBE] ENUM View3DShading.studiolight_background_alpha err AttributeError("'FloatProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.studiolight_background_blur err AttributeError("'FloatProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.studiolight_intensity err AttributeError("'FloatProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.studiolight_rotate_z err AttributeError("'FloatProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.use_world_space_lighting err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.show_shadows err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.show_cavity err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.show_object_outline err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.show_specular_highlight err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.show_xray err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.xray_alpha err AttributeError("'FloatProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.single_color err AttributeError("'FloatProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.background_color err AttributeError("'FloatProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.show_backface_culling err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.use_dof err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.use_scene_lights err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] ENUM View3DShading.use_scene_world err AttributeError("'BoolProperty' object has no attribute 'enum_items'")
+[PROBE] View3DShading.show_gizmo *** MISSING ***
+[PROBE] SpaceView3D.shading: False
+[PROBE] ############ image texture node enums ############
+[PROBE] ENUM ShaderNodeTexImage.interpolation = ['Linear', 'Closest', 'Cubic', 'Smart'] default= Linear
+[PROBE] ENUM ShaderNodeTexImage.extension = ['REPEAT', 'EXTEND', 'CLIP', 'MIRROR'] default= REPEAT
+[PROBE] ENUM ShaderNodeTexImage.projection = ['FLAT', 'BOX', 'SPHERE', 'TUBE'] default= FLAT
+[PROBE] ENUM ShaderNodeTexImage.image err AttributeError("'PointerProperty' object has no attribute 'enum_items'")
+[PROBE] ShaderNodeTexImage.colorspace MISSING/none-enum
+[PROBE] ############ breaking-change checks ############
+[PROBE] CHECK bpy.ops.wm.save_as_mainfile = True
+[PROBE] CHECK bpy.ops.wm.open_mainfile = True
+[PROBE] CHECK bpy.ops.wm.save_mainfile = True
+[PROBE] CHECK bpy.types.Window.cursor_warp = False
+[PROBE] CHECK WindowManager.event_timer_add = False
+[PROBE] CHECK WindowManager.event_timer_remove = False
+[PROBE] CHECK bpy.app.timers = True
+[PROBE] CHECK bpy.types.Mesh.from_pydata (bpy.ops.mesh?) = True
+[PROBE] CHECK bpy.types.Mesh.color_attributes = False
+[PROBE] CHECK bpy.types.Mesh.uv_layers = False
+[PROBE] CHECK bpy.types.Mesh.vertex_normals = False
+[PROBE] CHECK bpy.types.Mesh.corner_normals = False
+[PROBE] CHECK bpy.types.Mesh.calc_normals_split = False
+[PROBE] CHECK bpy.types.Mesh.calc_loop_triangles = False
+[PROBE] CHECK bpy.types.Mesh.edges = False
+[PROBE] CHECK bpy.types.Mesh.polygons = False
+[PROBE] CHECK bpy.types.Image.scale = False
+[PROBE] bpy.app.timers: ['is_registered', 'register', 'unregister']
+[PROBE] --- DOC bpy.app.timers.register ---
+[PROBE] .. function:: register(function, *, first_interval=0, persistent=False)
+
+   Add a new function that will be called after the specified amount of seconds.
+   The function gets no arguments and is expected to return either None or a float.
+   If ``None`` is returned, the timer will be unregistered.
+   A returned number specifies the delay until the function is called again.
+   ``functools.partial`` can be used to assign some parameters.
+
+   :param function: The function that should called.
+   :type function: Callable[[], float | None]
+   :param first_interval: Seconds until the callback should be called the first time.
+   :type first_interval: float
+   :param persistent: Don't remove timer when a new file is loaded.
+   :type persistent: bool
+
+blender.exe : Traceback (most recent call last):
+所在位置 行:1 字符: 175
++ ... P\bl52cfg"; & "E:\Program Files\Blender Foundation\Blender 5.2\blende ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "E:\360MoveData\Users\ASUS\Desktop\deepseek\bl52_probe.py", line 148, in <module>
+    doc("bpy.types.WindowManager.event_timer_add", bpy.types.WindowManager.event_timer_add)
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'WindowManager' has no attribute 'event_timer_add'
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

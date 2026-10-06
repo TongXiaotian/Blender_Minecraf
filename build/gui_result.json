@@ -1,0 +1,201 @@
+{
+  "blender": "5.2.2 LTS",
+  "steps": [
+    "插件已注册",
+    "已点击关闭启动画面",
+    "游戏已启动: True 模式=loading",
+    "载入完成，用时 9.9s，区块 55",
+    "模拟：低头挖掘 玩家=(0.5,76.0,0.5) 周围实心方块=147",
+    "准星目标位置=(0, 74, -1) 方块=3 (准星与射线一致)",
+    "诊断：mouse_left=True creative=True",
+    "挖掘后：周围实心方块 147 → 143，准星处方块 3 → 0",
+    "模拟：右键放置",
+    "放置后：周围实心方块=143",
+    "模拟：中键取方块",
+    "中键取方块：目标方块id=None 快捷栏 stone → stone",
+    "模拟：跳跃",
+    "截图 游戏画面: shot_game.png (760 KB)",
+    "模拟：打开物品栏",
+    "截图 物品栏: shot_inventory.png (905 KB)",
+    "模拟：F3 调试信息",
+    "模拟：Esc 菜单"
+  ],
+  "load_time_s": 9.9,
+  "peak_chunks": 89,
+  "peak_faces": 84047,
+  "gameplay": {
+    "centre": [
+      0,
+      76,
+      0
+    ],
+    "solid_before_dig": 147,
+    "solid_after_dig": 143,
+    "solid_after_place": 143,
+    "aim_pos": [
+      0,
+      74,
+      -1
+    ],
+    "aim_block_before": 3,
+    "aim_block_after": 0,
+    "slot_before_pick": "stone",
+    "slot_after_pick": "stone",
+    "pick_target_id": null
+  },
+  "draw_errors": [],
+  "tick_errors": [],
+  "mode": "pause",
+  "fps": 10.0,
+  "player": [
+    0.5,
+    76.0,
+    0.5
+  ],
+  "on_ground": true,
+  "chunks": 89,
+  "perf": {
+    "gen": 0.0,
+    "mesh": 0.682,
+    "n": 21,
+    "ticks": 87,
+    "load_calls": 0,
+    "loading": 0.683,
+    "play_ticks": 0,
+    "t_phys": 0.009,
+    "t_stream": 0.078,
+    "t_target": 0.004,
+    "t_cam": 0.003,
+    "t_sky": 0.002,
+    "t_tick": 0.098,
+    "t_meshdata": 1.326,
+    "t_meshobj": 0.187,
+    "calls": 1
+  },
+  "chat": [
+    "欢迎来到 Blender 我的世界！ WASD 移动，左键挖，右键放，E 打开物品栏",
+    "按 F3 看调试信息，Esc 打开菜单"
+  ],
+  "fps_samples": [
+    [
+      26.1,
+      11.3,
+      "playing",
+      89
+    ],
+    [
+      26.4,
+      10.6,
+      "playing",
+      89
+    ],
+    [
+      26.7,
+      10.1,
+      "playing",
+      89
+    ],
+    [
+      26.9,
+      10.2,
+      "playing",
+      89
+    ],
+    [
+      27.1,
+      9.9,
+      "playing",
+      89
+    ],
+    [
+      27.4,
+      9.6,
+      "playing",
+      89
+    ],
+    [
+      27.6,
+      9.4,
+      "inventory",
+      89
+    ],
+    [
+      27.7,
+      9.1,
+      "inventory",
+      89
+    ],
+    [
+      27.9,
+      9.1,
+      "inventory",
+      89
+    ],
+    [
+      28.1,
+      9.0,
+      "inventory",
+      89
+    ],
+    [
+      28.3,
+      8.7,
+      "inventory",
+      89
+    ],
+    [
+      28.6,
+      8.5,
+      "playing",
+      89
+    ],
+    [
+      28.8,
+      8.7,
+      "playing",
+      89
+    ],
+    [
+      28.9,
+      9.0,
+      "playing",
+      89
+    ],
+    [
+      29.1,
+      9.2,
+      "playing",
+      89
+    ],
+    [
+      29.3,
+      9.4,
+      "playing",
+      89
+    ],
+    [
+      29.5,
+      9.7,
+      "playing",
+      89
+    ],
+    [
+      29.8,
+      9.7,
+      "playing",
+      89
+    ],
+    [
+      30.0,
+      9.8,
+      "pause",
+      89
+    ],
+    [
+      30.2,
+      10.0,
+      "pause",
+      89
+    ]
+  ]
+}

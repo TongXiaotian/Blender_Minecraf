@@ -1,0 +1,119 @@
+{
+  "blender": "5.2.2 LTS",
+  "results": [
+    {
+      "config": "MATERIAL+阴影+HUD",
+      "ticks_per_sec": 0.3,
+      "redraw_ms": 69.4,
+      "chunks": 72,
+      "fps_reported": 6.7,
+      "ms": {
+        "phys": 0.4,
+        "stream": 49.7,
+        "target": 0.1,
+        "cam": 0.1,
+        "sky": 0.0,
+        "tick": 50.4,
+        "per_tick_ms": 3315.2
+      }
+    },
+    {
+      "config": "MATERIAL+阴影+HUD 冻结",
+      "ticks_per_sec": 35.58,
+      "redraw_ms": 15.3,
+      "chunks": 72,
+      "fps_reported": 59.9,
+      "ms": {
+        "phys": 0.0,
+        "stream": 0.0,
+        "target": 0.0,
+        "cam": 0.0,
+        "sky": 0.0,
+        "tick": 0.0,
+        "per_tick_ms": 28.1
+      }
+    },
+    {
+      "config": "MATERIAL+阴影 无HUD 冻结",
+      "ticks_per_sec": 35.82,
+      "redraw_ms": 14.5,
+      "chunks": 72,
+      "fps_reported": 60.0,
+      "ms": {
+        "phys": 0.0,
+        "stream": 0.0,
+        "target": 0.0,
+        "cam": 0.0,
+        "sky": 0.0,
+        "tick": 0.0,
+        "per_tick_ms": 27.9
+      }
+    },
+    {
+      "config": "SOLID+TEXTURE 无HUD 冻结",
+      "ticks_per_sec": 22.53,
+      "redraw_ms": 15.2,
+      "chunks": 72,
+      "fps_reported": 60.0,
+      "ms": {
+        "phys": 0.0,
+        "stream": 0.0,
+        "target": 0.0,
+        "cam": 0.0,
+        "sky": 0.0,
+        "tick": 0.0,
+        "per_tick_ms": 44.4
+      }
+    },
+    {
+      "config": "MATERIAL 无阴影 无HUD 冻结",
+      "ticks_per_sec": 35.19,
+      "redraw_ms": 15.6,
+      "chunks": 72,
+      "fps_reported": 60.0,
+      "ms": {
+        "phys": 0.0,
+        "stream": 0.0,
+        "target": 0.0,
+        "cam": 0.0,
+        "sky": 0.0,
+        "tick": 0.0,
+        "per_tick_ms": 28.4
+      }
+    },
+    {
+      "config": "线框 无HUD 冻结",
+      "ticks_per_sec": 55.28,
+      "redraw_ms": 20.8,
+      "chunks": 72,
+      "fps_reported": 60.0,
+      "ms": {
+        "phys": 0.0,
+        "stream": 0.0,
+        "target": 0.0,
+        "cam": 0.0,
+        "sky": 0.0,
+        "tick": 0.0,
+        "per_tick_ms": 18.1
+      }
+    }
+  ],
+  "perf": {
+    "gen": 0.0,
+    "mesh": 1.343,
+    "n": 37,
+    "ticks": 111,
+    "load_calls": 0,
+    "loading": 1.345,
+    "play_ticks": 0,
+    "t_phys": 0.0,
+    "t_stream": 0.05,
+    "t_target": 0.0,
+    "t_cam": 0.0,
+    "t_sky": 0.0,
+    "t_tick": 0.05,
+    "calls": 5
+  },
+  "draw_errors": [],
+  "tick_errors": []
+}

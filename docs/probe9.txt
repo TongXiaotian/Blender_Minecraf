@@ -1,0 +1,64 @@
+﻿[PROBE] === bpy.app.timers ===
+[PROBE] --- DOC bpy.app.timers.register ---
+[PROBE] .. function:: register(function, *, first_interval=0, persistent=False)
+
+   Add a new function that will be called after the specified amount of seconds.
+   The function gets no arguments and is expected to return either None or a float.
+   If ``None`` is returned, the timer will be unregistered.
+   A returned number specifies the delay until the function is called again.
+   ``functools.partial`` can be used to assign some parameters.
+
+   :param function: The function that should called.
+   :type function: Callable[[], float | None]
+   :param first_interval: Seconds until the callback should be called the first time.
+   :type first_interval: float
+   :param persistent: Don't remove timer when a new file is loaded.
+   :type persistent: bool
+
+[PROBE] timers: ['is_registered', 'register', 'unregister']
+[PROBE] === bpy.ops.wm subset ===
+[PROBE] present: ['save_as_mainfile', 'save_mainfile', 'open_mainfile', 'quit_blender', 'save_homefile', 'read_factory_settings', 'read_homefile', 'save_userpref', 'link', 'append', 'batch_rename_files']
+[PROBE] missing: []
+[PROBE] === deprecation capture ===
+[PROBE] CALL image.pixels.foreach_set -> ok | warnings: None
+[PROBE] CALL image.pixels.foreach_get -> ok | warnings: None
+[PROBE] CALL image.pack -> ok | warnings: None
+[PROBE] after pack: packed= <bpy_struct, PackedFile at 0x0000020B4879BF88> filepath= '' source= FILE
+[PROBE] CALL material.use_nodes = True -> ok | warnings: ["'Material.use_nodes' is expected to be removed in Blender 6.0"]
+[PROBE] CALL material.node_tree -> ok | warnings: None
+[PROBE] CALL tex.interpolation='Closest' -> ok | warnings: None
+[PROBE] CALL tex.extension='EXTEND' -> ok | warnings: None
+[PROBE] CALL gpu.shader.from_builtin('UNIFORM_COLOR') -> ok | warnings: None
+[PROBE] CALL gpu.texture.from_image -> ok | warnings: None
+[PROBE] CALL GPUBatch(type='TRI_FAN') -> ok | warnings: ["'TRI_FAN' is deprecated. Please use 'TRI_STRIP' or 'TRIS' and try modifying your vertices or indices to match the topology."]
+[PROBE] CALL GPUBatch(type='TRI_STRIP') -> ok | warnings: None
+[PROBE] CALL mesh.from_pydata -> ok | warnings: None
+[PROBE] CALL mesh.color_attributes.new -> ok | warnings: None
+[PROBE] CALL mesh.uv_layers.new -> ok | warnings: None
+[PROBE] CALL mesh.update() -> ok | warnings: None
+[PROBE] CALL mesh.calc_loop_triangles -> ok | warnings: None
+[PROBE] CALL mesh.vertex_normals -> ok | warnings: None
+[PROBE] CALL mesh.corner_normals -> ok | warnings: None
+[PROBE] CALL mesh.shade_flat (fn?) -> ok | warnings: None
+[PROBE] CALL mesh.calc_normals_split -> AttributeError: 'Mesh' object has no attribute 'calc_normals_split' | warnings: None
+[PROBE] === space shading assignment test ===
+[PROBE] View3DShading enum values (type): ['WIREFRAME', 'SOLID', 'MATERIAL', 'RENDERED']
+[PROBE] View3DShading enum values (color_type): ['MATERIAL', 'OBJECT', 'RANDOM', 'VERTEX', 'TEXTURE', 'SINGLE']
+[PROBE] View3DShading enum values (wireframe_color_type): ['THEME', 'OBJECT', 'RANDOM']
+[PROBE] View3DShading enum values (background_type): ['THEME', 'WORLD', 'VIEWPORT']
+[PROBE] View3DShading enum values (light): ['STUDIO', 'MATCAP', 'FLAT']
+[PROBE] View3DShading enum values (cavity_type): ['WORLD', 'SCREEN', 'BOTH']
+[PROBE] View3DShading enum values (render_pass): ['COMBINED', 'EMISSION', 'ENVIRONMENT', 'AO', 'SHADOW', 'TRANSPARENT', 'DIFFUSE_LIGHT', 'DIFFUSE_COLOR', 'SPECULAR_LIGHT', 'SPECULAR_COLOR', 'VOLUME_LIGHT', 'POSITION', 'NORMAL', 'MIST', 'CryptoObject', 'CryptoAsset', 'CryptoMaterial', 'AOV']
+[PROBE] background_color type: FLOAT array_length: 3
+[PROBE] single_color type: FLOAT
+[PROBE] studiolight_background_alpha type/default: FLOAT 0.0
+[PROBE] use_scene_lights default: False
+[PROBE] === bgl / removal summary ===
+[PROBE] import bgl FAIL ModuleNotFoundError("No module named 'bgl'")
+[PROBE] import bpy_extras OK
+[PROBE] import gpu_extras OK
+[PROBE] import mathutils OK
+[PROBE] gpu.shader names: ['create_from_info', 'from_builtin', 'unbind']
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

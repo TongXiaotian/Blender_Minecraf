@@ -1,0 +1,67 @@
+{
+  "steps": [
+    "插件已启用（addon_enable）",
+    "面板按钮启动：实例=True 种子=20240501 渲染距离=4 画质=medium",
+    "进入游戏：模式=playing 区块=45 画质=medium 阴影=True",
+    "OpenGL 渲染截图: E:\\360MoveData\\Users\\ASUS\\Desktop\\deepseek\\shot_final_gl.png 耗时 7.4s",
+    "SOLID 模式截图: E:\\360MoveData\\Users\\ASUS\\Desktop\\deepseek\\shot_final_solid.png",
+    "截图0（准备阶段）: E:\\360MoveData\\Users\\ASUS\\Desktop\\deepseek\\shot_final_warm.png 模式=playing",
+    "对象数/渲染耗时：{\"all\": [49, 0.53], \"9_objs\": [9, 0.5], \"4_objs\": [4, 0.49]}",
+    "截图1: E:\\360MoveData\\Users\\ASUS\\Desktop\\deepseek\\shot_final.png",
+    "截图2: E:\\360MoveData\\Users\\ASUS\\Desktop\\deepseek\\shot_final_late.png",
+    "视口诊断：{\"chunk_objects\": 81, \"visible\": 49, \"faces_visible\": 41955, \"cam_loc\": [0.5, 0.5, 77.62], \"player\": [0.5, 76.0, 0.5], \"shading_type\": \"MATERIAL\"}",
+    "已退出游戏",
+    "退出后：{\"perspective\": \"PERSP\", \"shading\": \"SOLID\", \"taa_samples\": 16, \"view_transform\": \"AgX\", \"objects\": 3}"
+  ],
+  "quality_applied": {
+    "shadows": true,
+    "taa_samples": 1,
+    "view_transform": "Standard"
+  },
+  "gl_probe": true,
+  "solid_probe": true,
+  "shot0": true,
+  "obj_probe": {
+    "all": [
+      49,
+      0.53
+    ],
+    "9_objs": [
+      9,
+      0.5
+    ],
+    "4_objs": [
+      4,
+      0.49
+    ]
+  },
+  "shot1": true,
+  "mode": "playing",
+  "fps": 6.7,
+  "chunks": 57,
+  "draw_errors": [],
+  "tick_errors": [],
+  "viewport": {
+    "chunk_objects": 81,
+    "visible": 49,
+    "faces_visible": 41955,
+    "cam_loc": [
+      0.5,
+      0.5,
+      77.62
+    ],
+    "player": [
+      0.5,
+      76.0,
+      0.5
+    ],
+    "shading_type": "MATERIAL"
+  },
+  "after_exit": {
+    "perspective": "PERSP",
+    "shading": "SOLID",
+    "taa_samples": 16,
+    "view_transform": "AgX",
+    "objects": 3
+  }
+}

@@ -1,0 +1,32 @@
+﻿[PROBE] ############ mathutils Matrix projection helpers ############
+[PROBE] Matrix attrs w/ Ortho/Perspective: ['Identity', 'LocRotScale', 'OrthoProjection', 'Scale', 'identity', 'is_identity', 'is_orthogonal', 'is_orthogonal_axis_vectors', 'median_scale', 'to_scale']
+[PROBE] manual ortho matrix = [[0.0024999999441206455, 0.0, 0.0, -1.0], [0.0, 0.0033333334140479565, 0.0, -1.0], [0.0, 0.0, -1.0, -0.0], [0.0, 0.0, 0.0, 1.0]]
+[PROBE] load_projection_matrix(ortho) OK; readback= [[0.0024999999441206455, 0.0, 0.0, -1.0], [0.0, 0.0033333334140479565, 0.0, -1.0], [0.0, 0.0, -1.0, -0.0], [0.0, 0.0, 0.0, 1.0]]
+[PROBE] ############ blf arg-count checks ############
+[PROBE] blf.size(0, 20) OK
+[PROBE] blf.size(0, 20, 72) -> TypeError blf.size() takes exactly 2 arguments (3 given)
+[PROBE] blf.size(0, 20, dpi=72) -> TypeError size() takes no keyword arguments
+[PROBE] blf.color(0,1,1,1,1) OK
+[PROBE] blf.position(0,0,0) -> TypeError blf.position() takes exactly 4 arguments (3 given)
+[PROBE] blf.position(0,0,0,0) OK
+[PROBE] ############ images + pixels ############
+[PROBE] --- DOC bpy.data.images.new ---
+[PROBE] BlendDataImages.new(name, width, height, alpha=False, float_buffer=False, stereo3d=False, is_data=False, tiled=False)
+Add a new image to the main database
+[PROBE] image: probe_img size= (4, 4) channels= 4 is_dirty= False packed= None filepath= '' source= GENERATED colorspace= sRGB
+[PROBE] Image props: ['alpha_mode', 'asset_data', 'channels', 'colorspace_settings', 'depth', 'display_aspect', 'file_format', 'filepath', 'filepath_raw', 'frame_duration', 'generated_color', 'generated_height', 'generated_type', 'generated_width', 'has_data', 'id_type', 'is_dirty', 'is_editable', 'is_embedded_data', 'is_evaluated', 'is_float', 'is_library_indirect', 'is_linked_packed', 'is_missing', 'is_multiview', 'is_runtime_data', 'is_stereo_3d', 'library', 'library_weak_reference', 'name', 'name_full', 'original', 'override_library', 'packed_file', 'packed_files', 'pixels', 'preview', 'render_slots', 'resolution', 'rna_type', 'seam_margin', 'session_uid', 'size', 'source', 'stereo_3d_format', 'tag', 'tiles', 'type', 'use_deinterlace', 'use_extra_user', 'use_fake_user', 'use_generated_float', 'use_half_precision', 'use_multiview', 'use_view_as_render', 'users', 'views_format']
+[PROBE] has save_render: True | has pack: True | has use_fake_user: True
+blender.exe : Traceback (most recent call last):
+所在位置 行:1 字符: 175
++ ... P\bl52cfg"; & "E:\Program Files\Blender Foundation\Blender 5.2\blende ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "E:\360MoveData\Users\ASUS\Desktop\deepseek\bl52_probe.py", line 74, in <module>
+    doc("ImagePixels.foreach_set", bpy.types.ImagePixels.foreach_set)
+                                   ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'module' object has no attribute 'ImagePixels'
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

@@ -1,0 +1,70 @@
+{
+  "results": [
+    {
+      "phase": "A 逻辑 only",
+      "ticks_per_sec": 16.2,
+      "frame_ms": 61.8,
+      "ms": {
+        "phys": 0.3,
+        "stream": 0.0,
+        "target": 0.1,
+        "cam": 0.1,
+        "sky": 0.0,
+        "tick": 0.5,
+        "meshdata": 0.0,
+        "meshobj": 0.0
+      },
+      "chunks": 69
+    },
+    {
+      "phase": "B 每帧重建1个区块",
+      "ticks_per_sec": 8.8,
+      "frame_ms": 114.1,
+      "ms": {
+        "phys": 0.4,
+        "stream": 0.0,
+        "target": 0.0,
+        "cam": 0.0,
+        "sky": 0.0,
+        "tick": 0.6,
+        "meshdata": 14.0,
+        "meshobj": 3.2
+      },
+      "chunks": 76
+    },
+    {
+      "phase": "C 每帧重建2个区块",
+      "ticks_per_sec": 8.3,
+      "frame_ms": 120.5,
+      "ms": {
+        "phys": 0.4,
+        "stream": 0.0,
+        "target": 0.0,
+        "cam": 0.0,
+        "sky": 0.0,
+        "tick": 0.6,
+        "meshdata": 17.9,
+        "meshobj": 6.0
+      },
+      "chunks": 76
+    },
+    {
+      "phase": "D 完整流式(实际游戏)",
+      "ticks_per_sec": 9.4,
+      "frame_ms": 106.7,
+      "ms": {
+        "phys": 0.3,
+        "stream": 19.6,
+        "target": 0.1,
+        "cam": 0.0,
+        "sky": 0.0,
+        "tick": 20.2,
+        "meshdata": 9.4,
+        "meshobj": 2.0
+      },
+      "chunks": 94
+    }
+  ],
+  "draw_errors": [],
+  "tick_errors": []
+}
